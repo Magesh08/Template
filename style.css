@@ -153,8 +153,9 @@ nav {
 
 /* General Button Styling */
 .btn {
+  margin-top: 30px;
   display: inline-block;
-  padding: 10px 20px;
+  padding: 10px 80px;
   background: linear-gradient(to right, #d3a984, #a6805f);
   color: #fff;
   border: none;
@@ -174,7 +175,7 @@ nav {
 
 /* About Section */
 .about {
-  padding: 4rem 2rem;
+  padding: 1rem 1rem;
   text-align: center;
   background: linear-gradient(to bottom, #f8f8f8, #f0f0f0);
   opacity: 0;
@@ -220,7 +221,7 @@ nav {
 
 /* Portfolio Section */
 .portfolio {
-  padding: 4rem 2rem;
+  padding: 1rem 1rem;
   text-align: center;
   background: linear-gradient(to bottom, #f0f0f0, #f8f8f8);
   opacity: 0;
@@ -279,7 +280,7 @@ nav {
 
 /* Services Section */
 .services {
-  padding: 4rem 2rem;
+  padding: 1rem 1rem;
   text-align: center;
   background: linear-gradient(to bottom, #f8f8f8, #f0f0f0);
   opacity: 0;
@@ -330,7 +331,7 @@ nav {
 
 /* Contact Section */
 .contact {
-  padding: 4rem 2rem;
+  padding: 1rem 1rem;
   text-align: center;
   background: linear-gradient(to bottom, #f0f0f0, #f8f8f8);
   opacity: 0;
@@ -456,7 +457,7 @@ footer {
   .portfolio,
   .services,
   .contact {
-    padding: 3rem 1rem;
+    padding: 1rem 1rem;
   }
   .about-content {
     flex-direction: column;
