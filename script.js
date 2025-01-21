@@ -22,29 +22,29 @@ const navSlide = () => {
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
       nav.classList.remove("nav-active"); // Close the sidebar
-          burger.classList.remove('toggle'); // Close burger animation
-          navLinks.forEach(link => {
-              link.style.animation = '';
-          }); // Remove the animation on every link
+      burger.classList.remove("toggle"); // Close burger animation
+      navLinks.forEach((link) => {
+        link.style.animation = "";
+      }); // Remove the animation on every link
     });
   });
 };
 
 const handleScroll = () => {
   const sections = document.querySelectorAll("section");
-
+  
   sections.forEach((section) => {
     const sectionTop = section.offsetTop;
     const windowHeight = window.innerHeight;
     const triggerBottom = sectionTop - windowHeight + 200;
-
-    if (window.scrollY > triggerBottom) {
-      section.classList.add("show");
-    } else {
-      section.classList.remove("show");
-    }
+    
+    // Check if the section is NOT the hero section and has not already been shown
+      if (section.classList.contains('hero') == false && window.scrollY > triggerBottom && !section.classList.contains('show')) {
+        section.classList.add("show");
+      }
   });
 };
 
+
 navSlide();
-window.addEventListener("scroll", handleScroll);
+window.addEventListener("scroll", handleScroll);  

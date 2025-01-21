@@ -534,4 +534,31 @@ footer {
 
 .toggle .line3 {
   transform: rotate(45deg) translate(-5px, -6px);
+}/* Existing CSS remains unchanged */
+
+/* Initial styles for all sections including hero */
+.hero,
+.about,
+.portfolio,
+.services,
+.contact {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Make the hero section visible by default */
+.hero {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Show styles for all sections including hero */
+.hero.show,
+.about.show,
+.portfolio.show,
+.services.show,
+.contact.show {
+  opacity: 1;
+  transform: translateY(0);
 }
