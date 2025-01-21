@@ -1,73 +1,90 @@
-// Burger menu functionality
 const navSlide = () => {
-  const burger = document.querySelector(".burger");
-  const nav = document.querySelector(".nav-links");
-  const navLinks = document.querySelectorAll(".nav-links li");
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".nav-links");
+     const navLinks = document.querySelectorAll('.nav-links li');
 
-  burger.addEventListener("click", () => {
-      nav.classList.toggle("nav-active");
-      navLinks.forEach((link, index) => {
-          if (link.style.animation) {
-              link.style.animation = "";
-          } else {
-              link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+    burger.addEventListener('click',() => {
+        nav.classList.toggle('nav-active');
+        navLinks.forEach((link, index) => {
+           if(link.style.animation){
+             link.style.animation = '';
+          }else{
+            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`
           }
-      });
-      burger.classList.toggle("toggle");
-  });
-
-  // Close menu on link click
-  navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-          nav.classList.remove("nav-active");
-          burger.classList.remove("toggle");
-          navLinks.forEach((link) => {
-              link.style.animation = "";
-          });
-      });
-  });
+         
+        });
+          // Burger Animation
+        burger.classList.toggle('toggle')
+    });
 };
 
-// Scroll-based animation
 const handleScroll = () => {
-  const sections = document.querySelectorAll("section");
+   const sections = document.querySelectorAll('section');
 
-  sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const windowHeight = window.innerHeight;
-      const triggerBottom = sectionTop - windowHeight + 200;
+   sections.forEach(section => {
+       const sectionTop = section.offsetTop;
+       const windowHeight = window.innerHeight;
+       const triggerBottom = sectionTop - windowHeight + 200;
 
-      if (
-          !section.classList.contains("hero") &&
-          window.scrollY > triggerBottom &&
-          !section.classList.contains("show")
-      ) {
-          section.classList.add("show");
-      }
-  });
+       if (window.scrollY > triggerBottom) {
+           section.classList.add('show');
+       } else {
+           section.classList.remove('show');
+       }
+   });
 };
 
-// EmailJS functionality
-(function () {
-  emailjs.init("KgWk9D9YYPLosc66U"); // Replace with your EmailJS Public Key
-})();
+// Validate email
+const isValidEmail = (email) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple email regex
+  return emailRegex.test(email);
+};
 
+// Validate phone
+const isValidPhone = (phone) => {
+  const phoneRegex = /^[+]?[0-9]{10,15}$/; // Accepts international and local formats
+  return phoneRegex.test(phone);
+};
+
+// EmailJS functionality with validation
 document.getElementById("contact-form").addEventListener("submit", function (event) {
   event.preventDefault(); // Prevent form submission
 
-  const formData = {
-      name: this.name.value,
-      phone: this.phone.value,
-      email: this.email.value,
-      message: this.message.value,
-  };
+  // Get form data
+  const name = this.name.value.trim();
+  const phone = this.phone.value.trim();
+  const email = this.email.value.trim();
+  const message = this.message.value.trim();
 
+  // Validation
+  let isValid = true;
+
+  if (!isValidEmail(email)) {
+      alert("Please enter a valid email address.");
+      isValid = false;
+  }
+  if (!isValidPhone(phone)) {
+      alert("Please enter a valid phone number (10-15 digits).");
+      isValid = false;
+  }
+  // if (message.length < 10) {
+  //     alert("Your message should be at least 10 characters long.");
+  //     isValid = false;
+  // }
+
+  if (!isValid) {
+      return; // Stop submission if any validation fails
+  }
+
+  const formData = { name, phone, email, message };
+
+  // Send the email
   emailjs
-      .send("service_z6ozmnc", "template_prl12pj", formData) // Replace with actual Service ID & Template ID
+      .send("service_z6ozmnc", "template_prl12pj", formData) // Replace with your Service ID & Template ID
       .then(
           (response) => {
               console.log("SUCCESS!", response.status, response.text);
-              alert("Message sent successfully!");
+             showSuccessModal(); // Show the modal on success
               this.reset();
           },
           (error) => {
@@ -77,6 +94,47 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
       );
 });
 
-// Initialize functionality
+// Initialize EmailJS and functionality
+(function () {
+  emailjs.init("KgWk9D9YYPLosc66U"); // Replace with your EmailJS Public Key
+})();
+
+
+// Function to show the success modal
+function showSuccessModal() {
+  const modal = document.createElement("div");
+  modal.classList.add("success-modal");
+  modal.innerHTML = `
+    <div class="modal-content">
+      <span class="close-modal">×</span>
+      <p>Message sent successfully!</p>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Close modal functionality
+  const closeModalButton = modal.querySelector(".close-modal");
+  closeModalButton.addEventListener("click", () => {
+      document.body.removeChild(modal);
+  });
+
+  // Close the modal if clicked outside
+  modal.addEventListener('click', function(event) {
+      if (event.target === modal) {
+          document.body.removeChild(modal);
+      }
+  });
+
+
+    // Close the modal after 3 sec
+    setTimeout(() => {
+      if(document.body.contains(modal)){
+          document.body.removeChild(modal);
+      }
+    }, 3000);
+
+
+}
+// Initialize burger menu and scroll animations
 navSlide();
 window.addEventListener("scroll", handleScroll);
