@@ -64,6 +64,21 @@ nav {
   color: #d3a984;
 }
 
+/* Modified CSS for Contact Link */
+.nav-links li a[href="#contact"] {
+  background-color: #d3a984;  /* Background color */
+  color: #fff;               /* Text color */
+  padding: 8px 15px;          /* Padding for spacing */
+  border-radius: 5px;         /* Rounded corners */
+  font-weight: bold;         /* Make it bold */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+.nav-links li a[href="#contact"]:hover {
+    background-color: #a6805f; /* Darker color on hover */
+    color: #fff;
+}
+
 /* Burger Menu */
 .burger {
   display: none;
@@ -79,7 +94,10 @@ nav {
 }
 
 .hero {
-  background: linear-gradient(to bottom, rgba(211, 169, 132, 0.2), rgba(211, 169, 132, 0)); /* Added a Gradient */
+  background-image: url('assets/images/herobackground.jpg'); /* Background image */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat;
   color: #fff;
   text-align: center;
   padding: 10rem 0;
@@ -88,9 +106,10 @@ nav {
   align-items: center;
   position: relative;
   z-index: 1;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  
 }
 .hero.show {
     opacity: 1;
@@ -98,14 +117,14 @@ nav {
 }
 
 .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for contrast */
-    z-index: -1;
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for contrast */
+  z-index: -1;
 }
 
 
