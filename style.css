@@ -405,6 +405,7 @@ footer {
     right: 0px;
     height: 92vh;
     top: 8vh;
+    padding-top: 20px;
     background-color: #f8f8f8;
     display: flex;
     flex-direction: column;
