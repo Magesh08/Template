@@ -84,7 +84,7 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
       .then(
           (response) => {
               console.log("SUCCESS!", response.status, response.text);
-             showSuccessModal(); // Show the modal on success
+             showSuccessModal(name); // Show the modal on success
               this.reset();
           },
           (error) => {
@@ -101,14 +101,20 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
 
 
 // Function to show the success modal
-function showSuccessModal() {
+function showSuccessModal(senderName) {
   const modal = document.createElement("div");
   modal.classList.add("success-modal");
+
+  // Modal content with name and a quote
   modal.innerHTML = `
-    <div class="modal-content">
-      <span class="close-modal">×</span>
-      <p>Message sent successfully!</p>
-    </div>
+      <div class="modal-content">
+          <span class="close-modal">×</span>
+          <h2>Thank You, ${senderName}!</h2>
+          <p>Your message has been sent successfully. We appreciate your trust and will get back to you shortly.</p>
+          <blockquote class="quote">
+              "Beauty begins the moment you decide to be yourself." – Coco Chanel
+          </blockquote>
+      </div>
   `;
   document.body.appendChild(modal);
 
@@ -118,23 +124,21 @@ function showSuccessModal() {
       document.body.removeChild(modal);
   });
 
-  // Close the modal if clicked outside
-  modal.addEventListener('click', function(event) {
+  // Close the modal if clicked outside the content
+  modal.addEventListener('click', function (event) {
       if (event.target === modal) {
           document.body.removeChild(modal);
       }
   });
 
-
-    // Close the modal after 3 sec
-    setTimeout(() => {
-      if(document.body.contains(modal)){
+  // Automatically close the modal after 5 seconds
+  setTimeout(() => {
+      if (document.body.contains(modal)) {
           document.body.removeChild(modal);
       }
-    }, 3000);
-
-
+  }, 50000); // 5 seconds
 }
+
 // Initialize burger menu and scroll animations
 navSlide();
 window.addEventListener("scroll", handleScroll);
