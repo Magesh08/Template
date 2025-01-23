@@ -3,7 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Makeup Artist - [Your Name]</title>
+    
+    <!-- SEO Enhancements -->
+    <title>Professional Makeup Artist | [Your Name] | Bridal & Event Makeup</title>
+    <meta name="description" content="Experienced makeup artist specializing in bridal, photoshoot, and special event makeup. Based in [Your City/Region]. Book your consultation today!">
+    <meta name="keywords" content="makeup artist, bridal makeup, photoshoot makeup, event makeup, [your city] makeup artist, professional makeup, beauty, [your name]">
+    <link rel="canonical" href="[Your Website URL]">
+    
+    <meta property="og:title" content="Professional Makeup Artist | [Your Name] | Bridal & Event Makeup">
+    <meta property="og:description" content="Experienced makeup artist specializing in bridal, photoshoot, and special event makeup. Based in [Your City/Region]. Book your consultation today!">
+    <meta property="og:image" content="[URL to your hero image or logo]">
+    <meta property="og:url" content="[Your Website URL]">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon (optional, but recommended) -->
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -46,14 +61,14 @@
     <header>
         <nav>
             <div class="logo">
-              <a href="#">[Your Logo or Name]</a>
+              <a href="/" aria-label="Go to Home Page">[Your Logo or Name]</a>
             </div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
-
+                
             </ul>
             <div class="burger">
                 <div class="line1"></div>
@@ -66,8 +81,8 @@
     <section id="hero" class="hero">
         <div class="hero-content">
             <h1>Elevating Your Beauty</h1>
-            <p>Expert makeup artistry for every occasion.</p>
-            <a href="#contact" class="btn">Book a Consultation</a>
+            <p>Expert makeup artistry for every occasion. Based in [Your City/Region]</p>
+            <a href="#contact" class="btn" aria-label="Book a Consultation">Book a Consultation</a>
         </div>
     </section>
 
@@ -76,9 +91,9 @@
     <section id="about" class="about">
         <h2>About Me</h2>
         <div class="about-content">
-            <img src="assets/images/profile.png" alt="Makeup Artist Image">
+            <img src="assets/images/profile.png" alt="Makeup Artist Image"> 
             <p>
-                Hello! I'm [Your Name], a professional makeup artist with a deep passion for enhancing natural beauty and creating unforgettable looks. With [Number] years of experience, I specialize in [List your specializations, e.g., bridal, editorial, special effects] makeup. My goal is to make every client feel confident and radiant, whether it's for a special event, a photoshoot, or just a boost of everyday glamour. I use high-quality products and stay updated on the latest trends to ensure you receive the best possible service. Let's collaborate to bring your beauty vision to life!
+                Hello! I'm [Your Name], a professional makeup artist with a deep passion for enhancing natural beauty and creating unforgettable looks. With [Number] years of experience, I specialize in [List your specializations, e.g., bridal, editorial, special effects] makeup. My goal is to make every client feel confident and radiant, whether it's for a special event, a photoshoot, or just a boost of everyday glamour. I use high-quality products and stay updated on the latest trends to ensure you receive the best possible service. Let's collaborate to bring your beauty vision to life! I am proudly based in [Your City/Region].
             </p>
         </div>
     </section>
@@ -87,21 +102,21 @@
         <h2>Portfolio</h2>
          <div class="card-container">
         <div class="card">
-            <img src="assets/images/bridal-glow.jpg" alt="Makeup Look 1">
+            <img src="assets/images/bridal-glow.jpg" alt="Bridal Makeup Look" width="300" height="400">
             <div class="card-content">
               <h3>Bridal Glow</h3>
               <p>A soft, romantic look for your special day.</p>
            </div>
          </div>
         <div class="card">
-            <img src="assets/images/Natural Radiance.jpg" alt="Makeup Look 2">
+            <img src="assets/images/Natural Radiance.jpg" alt="Natural Makeup Look" width="300" height="400">
              <div class="card-content">
               <h3>Natural Radiance</h3>
               <p>A subtle enhancement of your natural features.</p>
              </div>
          </div>
           <div class="card">
-            <img src="assets/images/boldchic.jpg" alt="Makeup Look 3">
+            <img src="assets/images/boldchic.jpg" alt="Bold Chic Makeup Look" width="300" height="400">
               <div class="card-content">
                 <h3>Bold and Chic</h3>
                 <p>A glamorous look for those who love to make a statement.</p>
@@ -109,7 +124,7 @@
          </div>
 
       </div>
-      <a href="#" class="btn">View More</a>
+      <a href="#" class="btn" aria-label="View More Portfolio Images">View More</a>
     </section>
 
     <section id="services" class="services">
@@ -132,14 +147,15 @@
             </div>
           </div>
     </section>
-    <section id="calendly">
+    <!-- <section id="calendly">
         <div class="calendly-container">
-      <!-- Calendly inline widget begin -->
-  <div class="calendly-inline-widget" data-url="https://calendly.com/mageshvaran?hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
+     
+        </div>
+      </section> -->
+       <!-- Calendly inline widget begin -->
+  <div class="calendly-inline-widget" data-url="https://calendly.com/mageshvaran?hide_gdpr_banner=1" style="min-width:320px;"></div>
   <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
   <!-- Calendly inline widget end -->
-        </div>
-      </section>
     <section id="contact" class="contact">
         <h2>Let's Connect</h2>
         <div class="contact-container">
@@ -156,23 +172,23 @@
             </div>
 
             <div class="contact-form">
-                 <form id="contact-form">
-                    <input type="text" name="name" placeholder="Full Name" required>
-                    <input type="tel" name="phone" placeholder="Contact Number" required>
-                    <input type="email" name="email" placeholder="Email Address" required>
-                    <textarea name="message" placeholder="How can we assist you?" required></textarea>
-                    <button type="submit" class="btn">Send Message</button>
+                 <form id="contact-form" action="#" method="post">
+                    <input type="text" name="name" placeholder="Full Name" required aria-label="Enter your full name">
+                    <input type="tel" name="phone" placeholder="Contact Number" required aria-label="Enter your contact number">
+                    <input type="email" name="email" placeholder="Email Address" required aria-label="Enter your email address">
+                    <textarea name="message" placeholder="How can we assist you?" required aria-label="Enter your message"></textarea>
+                    <button type="submit" class="btn" aria-label="Send Message">Send Message</button>
                 </form>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2025 [Your Name]. All rights reserved.</p>
+        <p>© 2025 Boulty. All rights reserved.</p>
         <div class="social-links">
-           <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-             <a href="#"><i class="fab fa-twitter"></i></a>
+           <a href="#" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook Profile"><i class="fab fa-facebook"></i></a>
+             <a href="#" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a>
          </div>
     </footer>
    <script src="script.js"></script>

@@ -1,37 +1,49 @@
 const navSlide = () => {
     const burger = document.querySelector(".burger");
     const nav = document.querySelector(".nav-links");
-     const navLinks = document.querySelectorAll('.nav-links li');
+    const navLinks = document.querySelectorAll('.nav-links li');
 
-    burger.addEventListener('click',() => {
+    burger.addEventListener('click', () => {
         nav.classList.toggle('nav-active');
         navLinks.forEach((link, index) => {
-           if(link.style.animation){
-             link.style.animation = '';
-          }else{
-            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`
-          }
-         
+            if (link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`
+            }
         });
-          // Burger Animation
+        // Burger Animation
         burger.classList.toggle('toggle')
     });
+
+
+    // Add event listeners to each nav link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('nav-active'); //remove nav active class
+          burger.classList.remove('toggle');//remove the burger toggle class
+           navLinks.forEach((link) => { //remove the nav links animations
+                link.style.animation = '';
+             });
+        });
+    });
+
 };
 
 const handleScroll = () => {
-   const sections = document.querySelectorAll('section');
+    const sections = document.querySelectorAll('section');
 
-   sections.forEach(section => {
-       const sectionTop = section.offsetTop;
-       const windowHeight = window.innerHeight;
-       const triggerBottom = sectionTop - windowHeight + 200;
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const windowHeight = window.innerHeight;
+        const triggerBottom = sectionTop - windowHeight + 200;
 
-       if (window.scrollY > triggerBottom) {
-           section.classList.add('show');
-       } else {
-           section.classList.remove('show');
-       }
-   });
+        if (window.scrollY > triggerBottom) {
+            section.classList.add('show');
+        } else {
+            section.classList.remove('show');
+        }
+    });
 };
 
 // Validate email
