@@ -19,13 +19,11 @@
     <!-- Favicon (optional, but recommended) -->
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.1">  <!-- Cache busting! Update 'v' on each deploy -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-     
-
-        .calendly-inline-widget {
+         .calendly-inline-widget {
             min-width: 80%;
             height: 650px;
         }
@@ -38,23 +36,20 @@
                 height: 400px; /* Reduce height on smaller screens */
             }
         }
-
-
-    
     </style>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-              <a href="/" aria-label="Go to Home Page">[Your Logo or Name]</a>
+              <a href="/" aria-label="Go to Home Page" style="color: #ba8150;">Archus Makeup</a>
             </div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
-                
+
             </ul>
             <div class="burger">
                 <div class="line1"></div>
@@ -72,12 +67,10 @@
         </div>
     </section>
 
-
-
     <section id="about" class="about">
         <h2>About Me</h2>
         <div class="about-content">
-            <img src="assets/images/profile.png" alt="Makeup Artist Image"> 
+            <img src="assets/images/profile.png" alt="Makeup Artist Image">
             <p>
                 Hello! I'm [Your Name], a professional makeup artist with a deep passion for enhancing natural beauty and creating unforgettable looks. With [Number] years of experience, I specialize in [List your specializations, e.g., bridal, editorial, special effects] makeup. My goal is to make every client feel confident and radiant, whether it's for a special event, a photoshoot, or just a boost of everyday glamour. I use high-quality products and stay updated on the latest trends to ensure you receive the best possible service. Let's collaborate to bring your beauty vision to life! I am proudly based in [Your City/Region].
             </p>
@@ -135,13 +128,13 @@
     </section>
     <section id="calendly">
         <center><h2  ">Scadule Bridal Work</h2></center>
-        
+
         <div class="calendly-inline-widget" data-url="https://calendly.com/mageshvaran?hide_gdpr_banner=1" style="min-width:320px;"></div>
         <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
         <!-- Calendly inline widget end -->
       </section>
 
-  
+
     <section id="contact" class="contact">
         <h2>Let's Connect</h2>
         <div class="contact-container">
@@ -177,6 +170,6 @@
              <a href="#" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a>
          </div>
     </footer>
-   <script src="script.js"></script>
+   <script src="script.js?v=1.1"></script> <!-- Cache busting! Update 'v' on each deploy -->
 </body>
 </html>
