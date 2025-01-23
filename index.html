@@ -7,6 +7,40 @@
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Calendly Styling */
+        .calendly-container {
+            width: 100%;
+            max-width: 700px; /* Adjust as needed */
+            margin: 20px auto; /* Center the widget with spacing */
+            border-radius: 10px;
+            overflow: hidden; /* Hide any overflow from the Calendly widget */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+            background-color: #fff; /* Ensure background is white or a light color */
+        }
+
+        .calendly-inline-widget {
+            min-width: 100%; /* Take up the full width of the container */
+            height: 700px; /* Set a fixed height for the widget */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .calendly-container {
+                margin: 10px auto; /* Less margin on smaller screens */
+            }
+            .calendly-inline-widget {
+                height: 600px; /* Reduce height on smaller screens */
+            }
+        }
+
+        /* Optional: Style the section heading to match */
+        #calendly h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -19,7 +53,7 @@
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
-                
+
             </ul>
             <div class="burger">
                 <div class="line1"></div>
@@ -37,10 +71,12 @@
         </div>
     </section>
 
+
+
     <section id="about" class="about">
         <h2>About Me</h2>
         <div class="about-content">
-            <img src="assets/images/profile.png" alt="Makeup Artist Image"> 
+            <img src="assets/images/profile.png" alt="Makeup Artist Image">
             <p>
                 Hello! I'm [Your Name], a professional makeup artist with a deep passion for enhancing natural beauty and creating unforgettable looks. With [Number] years of experience, I specialize in [List your specializations, e.g., bridal, editorial, special effects] makeup. My goal is to make every client feel confident and radiant, whether it's for a special event, a photoshoot, or just a boost of everyday glamour. I use high-quality products and stay updated on the latest trends to ensure you receive the best possible service. Let's collaborate to bring your beauty vision to life!
             </p>
@@ -71,7 +107,7 @@
                 <p>A glamorous look for those who love to make a statement.</p>
              </div>
          </div>
-    
+
       </div>
       <a href="#" class="btn">View More</a>
     </section>
@@ -96,20 +132,29 @@
             </div>
           </div>
     </section>
+    <section id="calendly">
+        <div class="calendly-container">
+      <!-- Calendly inline widget begin -->
+  <div class="calendly-inline-widget" data-url="https://calendly.com/mageshvaran?hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <!-- Calendly inline widget end -->
+        </div>
+      </section>
     <section id="contact" class="contact">
         <h2>Let's Connect</h2>
         <div class="contact-container">
             <div class="contact-info">
                 <h2>BrideMeUp</h2>
                  <p class="quote">"The best makeup is the passion that comes from within."</p>
-    
+
                 <p>We're thrilled you're considering us for your beauty needs. To ensure we address your requirements accurately, kindly complete the form provided. A dedicated member of our team will respond promptly.</p>
-    
+
                  <p>For immediate assistance or to discuss specific requests, please feel free to reach us through the following channels:</p>
                  <h3>Contact Information</h3>
                  <p><strong>Phone:</strong> +91 832323 83843</p>
                  <p><strong>Email:</strong> bridemeup@gmail.com</p>
             </div>
+
             <div class="contact-form">
                  <form id="contact-form">
                     <input type="text" name="name" placeholder="Full Name" required>
@@ -121,7 +166,7 @@
             </div>
         </div>
     </section>
-    
+
     <footer>
         <p>© 2025 [Your Name]. All rights reserved.</p>
         <div class="social-links">
