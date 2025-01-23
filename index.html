@@ -23,38 +23,24 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        /* Calendly Styling */
-        .calendly-container {
-            width: 100%;
-            max-width: 700px; /* Adjust as needed */
-            margin: 20px auto; /* Center the widget with spacing */
-            border-radius: 10px;
-            overflow: hidden; /* Hide any overflow from the Calendly widget */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-            background-color: #fff; /* Ensure background is white or a light color */
-        }
+     
 
         .calendly-inline-widget {
-            min-width: 100%; /* Take up the full width of the container */
-            height: 700px; /* Set a fixed height for the widget */
+            min-width: 80%;
+            height: 650px;
         }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .calendly-container {
-                margin: 10px auto; /* Less margin on smaller screens */
-            }
+@media screen and (max-width: 768px) {
+         
             .calendly-inline-widget {
-                height: 600px; /* Reduce height on smaller screens */
+                margin: 10px;
+                padding: 10px;
+                border-radius: 10px;
+                height: 400px; /* Reduce height on smaller screens */
             }
         }
 
-        /* Optional: Style the section heading to match */
-        #calendly h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-        }
+
+    
     </style>
 </head>
 <body>
@@ -82,7 +68,7 @@
         <div class="hero-content">
             <h1>Elevating Your Beauty</h1>
             <p>Expert makeup artistry for every occasion. Based in [Your City/Region]</p>
-            <a href="#contact" class="btn" aria-label="Book a Consultation">Book a Consultation</a>
+            <a href="#calendly" class="btn" aria-label="Book a Consultation">Book a Consultation</a>
         </div>
     </section>
 
@@ -147,15 +133,15 @@
             </div>
           </div>
     </section>
-    <!-- <section id="calendly">
-        <div class="calendly-container">
-     
-        </div>
-      </section> -->
-       <!-- Calendly inline widget begin -->
-  <div class="calendly-inline-widget" data-url="https://calendly.com/mageshvaran?hide_gdpr_banner=1" style="min-width:320px;"></div>
-  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-  <!-- Calendly inline widget end -->
+    <section id="calendly">
+        <center><h2  ">Scadule Bridal Work</h2></center>
+        
+        <div class="calendly-inline-widget" data-url="https://calendly.com/mageshvaran?hide_gdpr_banner=1" style="min-width:320px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <!-- Calendly inline widget end -->
+      </section>
+
+  
     <section id="contact" class="contact">
         <h2>Let's Connect</h2>
         <div class="contact-container">
